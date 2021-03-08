@@ -6,7 +6,7 @@
     ```
     $ npm install
     ```
-    (this command will automatically read the `package.json` and install needed packages)
+    (this command will install needed packages from `"devDependencies"` and `"dependencies"` tags in the `package.json` file)
 
 2. build the JS code
     ``` bash
