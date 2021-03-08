@@ -1,0 +1,72 @@
+nav {
+    display: flex;
+}
+nav>.title {
+    width: 150px;
+}
+nav>.menu {
+    display: flex;
+    flex:auto;
+    align-items: center;
+    justify-content: flex-end;
+}
+nav>.menu-trigger {
+    display: none;
+    flex: auto;
+    justify-content: flex-end;
+}
+nav>.menu>.item {
+    padding: 0px 15px;
+}
+@media (max-width: 600px) {
+    nav>.menu {
+        display: none;
+        align-items: center;
+        flex-wrap: wrap;
+        position: fixed; top:0px; right:0px; /* 把 item 定位在右上角 */
+        width: 200px;
+        background-color: darksalmon;
+    }
+    nav>.menu>.item {
+        width: 100%; text-align: center;
+        padding: 15px;
+    }
+    nav>.menu-trigger {
+        display: flex;
+    }
+}
+
+
+
+.welcome{
+    font-size: 30px;
+    height: 300px;
+    background-color: antiquewhite;
+    
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+main>.products {
+    display: flex;
+    flex-wrap: wrap; /* 為了讓 product 能往下掉 */
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+main>.products>.product {
+    width: 30%; 
+    margin: 10px;
+    background-color: cadetblue;
+
+}
+@media (max-width:600px) { /* 對 product 做 RWD */
+    main>.products>.product {
+        width:90%;
+    }
+}
