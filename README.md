@@ -13,4 +13,5 @@
     $ npm run build
     ```
     This command will build code in the **./src** folder and create a built file(`main.js`) in **./dist** folder
+
 3. open **./dist/index.html** on your browser (e.g. Chrome, Edge, or Safari)

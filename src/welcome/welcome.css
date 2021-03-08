@@ -1,0 +1,9 @@
+.welcome{
+    font-size: 30px;
+    height: 300px;
+    background-color: antiquewhite;
+    
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+}

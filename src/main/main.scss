@@ -1,0 +1,23 @@
+main {
+    display: flex;
+    justify-content: center;
+
+    .products {
+        display: flex;
+        flex-wrap: wrap; /* 為了讓 product 能往下掉 */
+        justify-content: center;
+        width: 100%;
+        max-width: 1200px;
+
+        .product {
+            width: 30%; 
+            margin: 10px;
+            background-color: cadetblue;
+        }
+        @media (max-width:600px) { /* 對 product 做 RWD */
+            .product {
+                width:90%;
+            }
+        }
+    }
+}
