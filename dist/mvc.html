@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MVC Pattern</title>
 </head>
+
 <body>
     <h3> MVC Pattern: add 1 by pressing the button</h3>
-    <div id="button">1</div>
+    <div id="counter">1</div>
     <button onclick="add();">Add</button>
     <button onclick="minus();">Subttract</button>
-    
+
     <script>
+        let data;
+        function init() {
+            data = 1;
+            render();
+        }
+
+        function render() {
+            let counter = document.querySelector("#counter");
+            counter.textContent = data;
+        }
+
         function add() {
             // querySelector(#id.class)
-            let counter = document.querySelector("#button");
-            counter.textContent = parseInt(counter.textContent) + 1;
+            data += 1;
+            render();
         }
 
         function minus() {
-            let counter = document.querySelector("#button");
-            counter.textContent = parseInt(counter.textContent) - 1;
+            data -= 1;
+            render();
         }
+
+        init();
     </script>
 </body>
+
 </html>
