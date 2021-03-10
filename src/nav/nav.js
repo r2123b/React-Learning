@@ -15,6 +15,7 @@ import "./nav.css"
 
 
 // ".menu" -> why we need '.'??
+// #id.class
 // You need to remember that '.' represents a class selector
 // https://stackoverflow.com/a/17563341/3755348
 let menu = document.querySelector(".menu");
