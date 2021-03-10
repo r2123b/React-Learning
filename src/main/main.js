@@ -1,4 +1,5 @@
 import "./main.scss"
+import React from "react"
 
 /*
 <main>
@@ -22,34 +23,21 @@ fetch(src).then((response) => {
 });
 */
 
-const main = document.createElement("main");
-let products = document.createElement("div");
-products.className = "products";
-main.appendChild(products);
+let products = React.createElement("div", { className: "products" }, null);
+let main = React.createElement("main", {}, products);
 
 let src = "https://cwpeng.github.io/live-records-samples/data/products.json"
-// The fetch() method is used to send the requests to the server without refreshing the page
-/* basic syntax:
-fetch(url, {options}).then((respons) => {
-  return respons.json(); //取的資料後將資料傳給下一個 then
-}).then((data) => {
-  ...
-}).catch((error) => { // 當初出現錯誤時跑 catch
-  console.log(error);
-})
- */
-
-// why not use jOuery ajax or Promises??
-fetch(src, ).then((response) => {
+fetch(src,).then((response) => {
     return response.json();
 }).then((data) => {
+    let myproducts = document.querySelector(".products");
     for (let i = 0; i < data.length; i++) {
+        console.log(data[i]);
         let item = document.createElement("div");
         item.className = "product";
         item.textContent = data[i].name;
-        products.appendChild(item);
+        myproducts.appendChild(item);
     }
 });
-
 
 export default main;

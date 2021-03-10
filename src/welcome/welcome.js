@@ -34,9 +34,12 @@ welcome.addEventListener("click", function () {
 });
 */
 
+
+// version 3
 // React.createElement("標籤名稱", 屬性, sub-components);
 // this is to create "React element" not "HTML element"
 // React can lead to an error, "Node.appendChild must be an instance of Node"
+
 let flip = true;
 let welcome = React.createElement(
     "div",
@@ -57,8 +60,28 @@ let welcome = React.createElement(
     "歡迎光臨"
 );
 
-
-
 // document.body.appendChild(welcome); -> 這會影響到 index.html <body> 的排版
 // 所以用底下取代
 export default welcome;
+
+
+/* version 4
+<div class="welcome">
+    歡迎光臨
+</div>
+*/
+/*
+class Welcome extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        // JSX(React 自創的)
+        // Babel can convert the following code into JS
+        return <div clss="welcome">
+            歡迎光臨
+        </div>;
+    }
+}
+export default Welcome;  // export a class
+*/
