@@ -10,22 +10,64 @@
 
 <body>
     <h3> MVC Pattern: add 1 by pressing the button</h3>
+    <ul id="list"></ul>
+    <button onclick="addItem();">Add Item</button>
+    <button onclick="removeItem();">Remove</button>
+
+
     <div id="counter">1</div>
     <button onclick="add();">Add</button>
     <button onclick="minus();">Subttract</button>
 
     <script>
+        /*
+          the following code is to manage "list"
+        */
+        let listData;
+        function initList() {
+            listData = ["我", "是", "帥", "哥"];
+            renderList();
+        }
+
+        function renderList() {
+            let list = document.querySelector("#list");
+            list.innerHTML = "";  // first clean the list's items
+            for (let i = 0; i < listData.length; i++) {
+                let item = document.createElement("li");
+                item.textContent = listData[i];
+                list.appendChild(item);
+            }
+        }
+
+        function addItem() {
+            listData.push("新項目");
+            renderList();
+        }
+
+        function removeItem() {
+            listData.pop();
+            renderList();
+        }
+        initList();
+
+
+        /*
+          the following code is to manage "counter"
+        */
+        // model
         let data;
         function init() {
             data = 1;
             render();
         }
 
+        // view
         function render() {
             let counter = document.querySelector("#counter");
             counter.textContent = data;
         }
 
+        // controller
         function add() {
             // querySelector(#id.class)
             data += 1;
