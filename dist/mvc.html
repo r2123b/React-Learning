@@ -11,75 +11,73 @@
 <body>
     <h3> MVC Pattern: add 1 by pressing the button</h3>
     <ul id="list"></ul>
-    <button onclick="addItem();">Add Item</button>
-    <button onclick="removeItem();">Remove</button>
+    <button onclick="myList.addItem();">Add Item</button>
+    <button onclick="myList.removeItem();">Remove</button>
 
 
     <div id="counter">1</div>
-    <button onclick="add();">Add</button>
-    <button onclick="minus();">Subttract</button>
+    <button onclick="myCounter.add();">Add</button>
+    <button onclick="myCounter.minus();">Subttract</button>
 
     <script>
         /*
           the following code is to manage "list"
         */
-        let listData;
-        function initList() {
-            listData = ["我", "是", "帥", "哥"];
-            renderList();
-        }
+        class MyList {
+            constructor() {
+                this.listData = ["我", "是", "帥", "哥"];
+                this.render();
+            }
 
-        function renderList() {
-            let list = document.querySelector("#list");
-            list.innerHTML = "";  // first clean the list's items
-            for (let i = 0; i < listData.length; i++) {
-                let item = document.createElement("li");
-                item.textContent = listData[i];
-                list.appendChild(item);
+            render() {
+                let list = document.querySelector("#list");
+                list.innerHTML = "";  // first clean the list's items
+                for (let i = 0; i < this.listData.length; i++) {
+                    let item = document.createElement("li");
+                    item.textContent = this.listData[i];
+                    list.appendChild(item);
+                }
+            }
+
+            addItem() {
+                this.listData.push("新項目");
+                this.render();
+            }
+
+            removeItem() {
+                this.listData.pop();
+                this.render();
             }
         }
-
-        function addItem() {
-            listData.push("新項目");
-            renderList();
-        }
-
-        function removeItem() {
-            listData.pop();
-            renderList();
-        }
-        initList();
+        let myList = new MyList();
 
 
         /*
           the following code is to manage "counter"
         */
-        // model
-        let data;
-        function init() {
-            data = 1;
-            render();
-        }
+        class Counter {
+            constructor() {
+                this.data = 1;
+                this.render();
+            }
 
-        // view
-        function render() {
-            let counter = document.querySelector("#counter");
-            counter.textContent = data;
-        }
+            render() {
+                let counter = document.querySelector("#counter");
+                counter.textContent = this.data;
+            }
 
-        // controller
-        function add() {
-            // querySelector(#id.class)
-            data += 1;
-            render();
-        }
+            add() {
+                this.data += 1;
+                this.render();
+            }
 
-        function minus() {
-            data -= 1;
-            render();
+            minus() {
+                this.data -= 1;
+                this.render();
+            }
         }
+        let myCounter = new Counter();
 
-        init();
     </script>
 </body>
 
