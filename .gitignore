@@ -1,2 +1,5 @@
 # this folder is created by npm
 node_modules
+
+# ignore built file
+dist/main.js
