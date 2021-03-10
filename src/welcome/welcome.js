@@ -42,6 +42,10 @@ let welcome = React.createElement(
     "div",
     {
         className: "welcome",
+        style: {
+            color: "red",
+            fontWeight: "bold"
+        },
         onClick: function () {
             if (flip)
                 document.querySelector(".welcome").textContent = "很高興見到你";
