@@ -26,6 +26,8 @@ fetch(src).then((response) => {
 let products = React.createElement("div", { className: "products" }, null);
 let main = React.createElement("main", {}, products);
 
+
+// add listener in React: https://stackoverflow.com/a/36181732/3755348
 let src = "https://cwpeng.github.io/live-records-samples/data/products.json"
 fetch(src,).then((response) => {
     return response.json();

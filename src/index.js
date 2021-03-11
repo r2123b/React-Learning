@@ -9,9 +9,10 @@ import main from "./main/main.js"
 // 但需要在 "webpack.config.js" 裡面加入 module
 import "./index.css"
 
+// 不要把components 直接畫在 root 底下, 所以用一個 app 來接
 let app = React.createElement("div", {}, [welcome, main]);
 
 ReactDOM.render(
     app,
-    document.querySelector("#root")    // 不直接畫在 root 底下
+    document.querySelector("#root")
 );

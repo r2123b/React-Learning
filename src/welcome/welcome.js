@@ -65,7 +65,8 @@ let welcome = React.createElement(
 export default welcome;
 
 
-/* version 4
+
+/* version 4: React return HTML tags
 <div class="welcome">
     歡迎光臨
 </div>
@@ -77,7 +78,7 @@ class Welcome extends React.Component {
     }
     render() {
         // JSX(React 自創的)
-        // Babel can convert the following code into JS
+        // Babel can convert the following code into JS - TBC on 3/13
         return <div clss="welcome">
             歡迎光臨
         </div>;
