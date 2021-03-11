@@ -11,24 +11,35 @@
 <body>
     <h3> MVC Pattern: add 1 by pressing the button</h3>
     <ul id="list"></ul>
-    <button onclick="myList.addItem();">Add Item</button>
-    <button onclick="myList.removeItem();">Remove</button>
+    <button id="list_add_btn">Add Item</button>
+    <button id="list_remove_btn">Remove</button>
 
 
     <div id="counter">1</div>
-    <button onclick="myCounter.add();">Add</button>
-    <button onclick="myCounter.minus();">Subttract</button>
+    <button onclick="myCounter.add()">Add</button>
+    <button onclick="myCounter.minus()">Subttract</button>
 
     <script>
         /*
           the following code is to manage "list"
         */
         class MyList {
+            //model
             constructor() {
                 this.listData = ["我", "是", "帥", "哥"];
                 this.render();
+
+                // add listener
+                document.querySelector("#list_add_btn").addEventListener("click", () => {
+                    console.log(this)
+                    this.addItem();
+                }, false);
+                document.querySelector("#list_remove_btn").addEventListener("click", () => {
+                    this.removeItem();
+                }, false);
             }
 
+            //view
             render() {
                 let list = document.querySelector("#list");
                 list.innerHTML = "";  // first clean the list's items
@@ -39,6 +50,7 @@
                 }
             }
 
+            // the following methods are controller
             addItem() {
                 this.listData.push("新項目");
                 this.render();
