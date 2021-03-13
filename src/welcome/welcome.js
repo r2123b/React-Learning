@@ -84,17 +84,20 @@ class Welcome extends React.Component {
             歡迎光臨
         </div>
         */
-        return React.createElement(
-            "div",
-            {
-                className: "welcome",
-                style: {
-                    color: "red",
-                    fontWeight: "bold"
+        let flip = true
+        return <div
+            className="welcome"
+            onClick={
+                function () {
+                    if (flip)
+                        document.querySelector(".welcome").textContent = "很高興見到你";
+                    else
+                        document.querySelector(".welcome").textContent = "再次見到你了";
+                    flip = !flip;
                 }
-            },
-            "歡迎光臨"
-        );
+            }>
+            歡迎光臨
+            </div>
     }
 }
 export default Welcome;  // export a class
