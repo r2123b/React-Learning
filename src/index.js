@@ -10,7 +10,7 @@ import main from "./main/main.js"
 import "./index.css"
 
 // 不要把components 直接畫在 root 底下, 所以用一個 app 來接
-let app = React.createElement("div", {}, [welcome, main]);
+let app = React.createElement(welcome);
 
 ReactDOM.render(
     app,
